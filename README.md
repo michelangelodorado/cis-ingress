@@ -33,17 +33,18 @@ We are now to specify the ingress controller that should handle the ingress reso
 Source of truth in terms of parameters are now found in here: https://clouddocs.f5.com/containers/latest/userguide/ingress.html
 
 Now deploy the hello-world app: 
-
+``` 
 kubectl create -f deployment-hello-world.yaml
 kubectl create -f nodeport-service-hello-world.yaml
 kubectl create -f ingress-hello-world.yaml
-
+``` 
+  
 To Delete Hello-World
-
+``` 
 kubectl delete -f ingress-hello-world.yaml
 kubectl delete -f nodeport-service-hello-world.yaml
 kubectl delete -f deployment-hello-world.yaml
-
+``` 
 
 
 Upon applying the service: 
