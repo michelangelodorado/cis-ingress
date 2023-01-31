@@ -19,13 +19,14 @@ Don't forget to Increase Restjavad memory on BIG-IP
 
 git clone  ____________________________
 
-> kubectl create secret generic bigip-login -n kube-system --from-literal=username=admin --from-literal=password="<BIG-IP Password>"
-> kubectl create serviceaccount bigip-ctlr -n kube-system
-> kubectl apply -f k8s_rbac.yaml
-> kubectl apply -f https://raw.githubusercontent.com/F5Networks/k8s-bigip-ctlr/master/docs/config_examples/rbac/clusterrole.yaml
-> kubectl apply -f https://raw.githubusercontent.com/F5Networks/k8s-bigip-ctlr/master/docs/config_examples/customResourceDefinitions/customresourcedefinitions.yml
-
-> kubectl apply -f  cis-deploy.yaml
+``` 
+kubectl create secret generic bigip-login -n kube-system --from-literal=username=admin --from-literal=password="<BIG-IP Password>"
+kubectl create serviceaccount bigip-ctlr -n kube-system
+kubectl apply -f k8s_rbac.yaml
+kubectl apply -f https://raw.githubusercontent.com/F5Networks/k8s-bigip-ctlr/master/docs/config_examples/rbac/clusterrole.yaml
+kubectl apply -f https://raw.githubusercontent.com/F5Networks/k8s-bigip-ctlr/master/docs/config_examples/customResourceDefinitions/customresourcedefinitions.yml
+kubectl apply -f  cis-deploy.yaml
+``` 
 
 Although this example is copied from https://clouddocs.f5.com/training/community/containers/html/class1/module1/lab2.html
 Take note that it was an old article and the Ingress Resource does not have ingressclassname configuration in it. 
