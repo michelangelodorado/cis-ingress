@@ -1,22 +1,29 @@
 # cis-ingress
 Use F5 BIG-IP Container Ingress Services (CIS) as your Ingress Controller
-Then we deploy Hello-World App Using Ingress
+then we deploy Hello-World App Using Ingress Resource. 
+So in short, we are setting up CIS WITHOUT the intricacies of VXLan or BGP. 
 
-Setting up CIS without VXLan or BGP 
-It just communicates directly as nodeport, which is automatically added as pool members of the F5 
-as long as it can communicate  internally/directly/has route to F5's Self-IP/Management IP 
+It just communicates directly as NodePort, which is automatically added as pool members of BIG-IP. 
+So, as long as it can communicate directly/has route to F5's Self-IP/Management IP 
 So if you are using NodePort, you don't need container networking such as Flannel/BGP, as they are
 
 Only to be used to access the pod directly (which involves routing/vxlan)
 
+Additional Reference: 
 https://loadbalancing.se/2021/03/28/installing-troubleshooting-and-running-bigip-ingress-controller/
 
-
+Tips: 
+Don't forget to Increase Restjavad memory on BIG-IP
+Please remove all the CMs that may result to conflicts with the newly created object in Ingress. 
+For CIS, the Service is the center of the universe.
+    It links to the Deployment Configuration via the app label
+    It links to the Configuration Map via the cis.f5.com/as3-tenant: <whatever> label
+  
+```
 BIG-IP1: 10.201.10.156 (mgmt) / 172.16.100.156 on Version 16.1.0
 Kubernetes Master Node: 10.201.10.151 on Ubuntu 18.04 LTS and kubernetes version v1.25.4; containerd://1.5.9
 f5-appsvcs 	3.40.0
-Don't forget to Increase Restjavad memory on BIG-IP
-
+```
 git clone  ____________________________
 
 ``` 
