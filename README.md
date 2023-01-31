@@ -47,14 +47,16 @@ kubectl delete -f deployment-hello-world.yaml
 
 
 Upon applying the service: 
+``` 
 2023/01/31 02:43:44 [DEBUG] [CORE] Discovered members for service default/f5-hello-world-web is [{172.16.100.21 31301 8080 user-enabled} {172.16.100.22 31301 8080 user-enabled} {172.16.100.23 31301 8080 user-enabled} {10.201.10.153 31301 8080 user-enabled}]
 2023/01/31 02:43:44 [DEBUG] [CORE] Updated 0 of 0 virtual server configs, deleted 0
 2023/01/31 02:43:44 [DEBUG] [CORE] Finished syncing virtual servers f5-hello-world-web in namespace default (834.74µs), 9/9
 2023/01/31 02:43:44 [DEBUG] [AS3] Preparing response message to response handler for arp and fdb config
 2023/01/31 02:43:44 [DEBUG] [AS3] Sent response message to response handler for arp and fdb config
-
+``` 
 
 Upon creation of Ingress: 
+``` 
 2023/01/31 02:47:32 [DEBUG] [CORE] Configured rule: {ingress___ingress_default_f5-hello-world-web / 0 [0xc000307aa0] []}
 2023/01/31 02:47:32 [DEBUG] [RESOURCE] Configured policy: {ingress_172-16-4-68_80 kubernetes  [forwarding]  true [http] [0xc000307b00] /Common/first-match}
 2023/01/31 02:47:32 [DEBUG] Updating poolmembers for nodeport mode with service f5-hello-world-web/default
@@ -72,6 +74,6 @@ Upon creation of Ingress:
 2023/01/31 02:47:38 [DEBUG] [AS3] Sent response message to response handler for arp and fdb config
 2023/01/31 02:47:38 [DEBUG] [AS3] Preparing response message to response handler for arp and fdb config
 2023/01/31 02:47:38 [DEBUG] [AS3] Sent response message to response handler for arp and fdb config
-
+``` 
 
 
