@@ -24,7 +24,9 @@ BIG-IP1: 10.201.10.156 (mgmt) / 172.16.100.156 on Version 16.1.0
 Kubernetes Master Node: 10.201.10.151 on Ubuntu 18.04 LTS and kubernetes version v1.25.4; containerd://1.5.9
 f5-appsvcs 	3.40.0
 ```
-git clone  ____________________________
+
+git clone https://github.com/ericausente/cis-ingress.git
+cd cis_ingress
 
 ``` 
 kubectl create secret generic bigip-login -n kube-system --from-literal=username=admin --from-literal=password="<BIG-IP Password>"
